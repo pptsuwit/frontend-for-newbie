@@ -2,14 +2,8 @@ import httpService from "@/utils/axios";
 import { deleteCookie, getCookie } from "cookies-next";
 
 class AuthService {
-  register(username, password, firstName, lastName) {
-    const schema = {
-      username: username,
-      password: password,
-      firstName: firstName,
-      lastName: lastName,
-    };
-    return httpService.post("/register", schema);
+  register(registerForm) {
+    return httpService.post("/register", registerForm);
   }
   login(username, password) {
     const schema = {
