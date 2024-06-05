@@ -1,17 +1,7 @@
 "use client";
-import { getModalMessage } from "@/utils/helpers";
 import { createContext, useContext, useState } from "react";
 
 export const GlobalContext = createContext({
-  modal: false,
-  setModal: () => false,
-  modalMessage: { title: "", message: "", status: "" },
-  setModalMessage: () => ({
-    title: "",
-    message: "",
-    status: "",
-  }),
-
   loading: false,
   setLoading: () => false,
   drawer: false,
@@ -35,11 +25,27 @@ export const GlobalContext = createContext({
     confirm: () => {},
     cancle: () => {},
   }),
+  dialogDelete: {
+    show: false,
+    title: "",
+    message: "",
+    iconType: "",
+    confirm: () => {},
+    cancle: () => {},
+    deleteId: "",
+  },
+  setDialogDelete: () => ({
+    show: false,
+    title: "",
+    message: "",
+    iconType: "",
+    confirm: () => {},
+    cancle: () => {},
+    deleteId: "",
+  }),
 });
 
 export const GlobalContextProvider = ({ children }) => {
-  const [modal, setModal] = useState(false);
-  const [modalMessage, setModalMessage] = useState(getModalMessage());
   const [loading, setLoading] = useState(false);
   const [drawer, setDrawer] = useState(false);
   const [title, setTitle] = useState("");
@@ -56,16 +62,27 @@ export const GlobalContextProvider = ({ children }) => {
       }));
     },
   });
+  const [dialogDelete, setDialogDelete] = useState({
+    deleteId: "",
+    show: false,
+    title: "",
+    message: "",
+    iconType: "warning",
+    confirm: () => {},
+    cancle: () => {
+      setDialogDelete((prev) => ({
+        ...prev,
+        show: false,
+      }));
+    },
+  });
   return (
     <GlobalContext.Provider
       value={{
-        modal,
-        setModal,
-        modalMessage,
-        setModalMessage,
-
         dialog,
         setDialog,
+        dialogDelete,
+        setDialogDelete,
 
         loading,
         setLoading,
