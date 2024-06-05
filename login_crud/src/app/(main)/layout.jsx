@@ -9,11 +9,11 @@ export default function MainLayouts({ children }) {
     <GlobalContextProvider>
       <Dialog />
       <DialogDelete />
-      <div className="z-0 flex absolute w-full h-full">
+      <div className="flex absolute w-full h-full">
         <Drawer />
         <div className="w-full">
           <Navbar />
-          <div className="xs:py-4 sm:p-4 z-0 ">{children}</div>
+          <div>{children}</div>
         </div>
       </div>
     </GlobalContextProvider>

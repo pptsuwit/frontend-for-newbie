@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const defaultDialog = {
     show: false,
-    title: "Sign Out",
+    title: "Are you sure ?",
     message: "Are you sure you want to sign out?",
     iconType: "warning",
     confirm: signOut,
@@ -64,7 +64,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white border-gray-200 shadow-md h-16 z-40">
+      <nav className="bg-white border-gray-200 shadow-md h-16 z-0">
         <div className="flex items-center py-2">
           {/* Title */}
           <div className="flex xs:w-[calc(100%-4rem)] sm:w-[calc(100%-10rem)] px-2 xs:justify-start sm:justify-start">
@@ -107,7 +107,7 @@ const Navbar = () => {
             </button>
             {/* <!-- Dropdown menu --> */}
             {menu && (
-              <div className="absolute top-11 right-5 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow">
+              <div className="absolute z-50 top-11 right-5 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow">
                 <div className="px-4 py-3 ">
                   <span className="block text-sm text-blue-500 font-bold">
                     {user.name}

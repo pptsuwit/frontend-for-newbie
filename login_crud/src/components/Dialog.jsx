@@ -39,22 +39,24 @@ export default function Dialog() {
                 )}
                 <h1 className="mb-5 text-3xl font-bold">{dialog.title}</h1>
                 <h3 className="mb-5 text-lg font-normal ">{dialog.message}</h3>
-                <button
-                  onClick={() => dialog.confirm(true)}
-                  data-modal-hide="popup-modal"
-                  type="button"
-                  className="text-white bg-blue-500 hover:bg-blue-600  font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2"
-                >
-                  Confirm
-                </button>
-                <button
-                  onClick={dialog.cancle}
-                  data-modal-hide="popup-modal"
-                  type="button"
-                  className="text-gray-50 bg-gray-500 hover:bg-gray-600 hover:text-white rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 focus:z-10  "
-                >
-                  Close
-                </button>
+                <div className="flex justify-end gap-2">
+                  <button
+                    onClick={dialog.cancle}
+                    data-modal-hide="popup-modal"
+                    type="button"
+                    className="text-gray-500 bg-white-500 hover:bg-gray-50 hover:text-gray-800 rounded-lg border border-white-200 text-sm font-medium px-5 py-2.5 focus:z-10  "
+                  >
+                    Cancle
+                  </button>
+                  <button
+                    onClick={() => dialog.confirm(true)}
+                    data-modal-hide="popup-modal"
+                    type="button"
+                    className="text-white bg-blue-500 hover:bg-blue-600  font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center me-2"
+                  >
+                    Logout
+                  </button>
+                </div>
               </div>
             </div>
           </div>
