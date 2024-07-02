@@ -3,6 +3,12 @@ import React, { useState } from "react";
 import { Button, Drawer } from "antd";
 import { FaSquare } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
+import {
+  MdFeaturedPlayList,
+  MdPriceChange,
+  MdCommute,
+  MdOutlineContactSupport,
+} from "react-icons/md";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -34,24 +40,40 @@ export default function Navbar() {
           open={open}
           key={"left"}
         >
-          <div className="py-2">
-            <a href="#" className="text-blue-400 hover:text-blue-800">
-              Features
+          <div className="p-2 rounded-md hover:bg-slate-100">
+            <a
+              href="#"
+              className="!text-blue-400 hover:text-blue-800 flex items-center   gap-2"
+            >
+              <MdFeaturedPlayList />
+              <p>Features</p>
             </a>
           </div>
-          <div className="py-2">
-            <a href="#" className="text-blue-400 hover:text-blue-800">
-              Pricing
+          <div className="p-2 rounded-md hover:bg-slate-100">
+            <a
+              href="#"
+              className="!text-blue-400 hover:text-blue-800 flex items-center gap-2"
+            >
+              <MdPriceChange />
+              <p>Pricing</p>
             </a>
           </div>
-          <div className="py-2">
-            <a href="#" className="text-blue-400 hover:text-blue-800">
-              Community
+          <div className="p-2 rounded-md hover:bg-slate-100">
+            <a
+              href="#"
+              className="!text-blue-400 hover:text-blue-800 flex items-center gap-2"
+            >
+              <MdCommute />
+              <p>Community</p>
             </a>
           </div>
-          <div className="py-2">
-            <a href="#" className="text-blue-400 hover:text-blue-800">
-              Support
+          <div className="p-2 rounded-md hover:bg-slate-100">
+            <a
+              href="#"
+              className="!text-blue-400 hover:text-blue-800 flex items-center gap-2"
+            >
+              <MdOutlineContactSupport />
+              <p>Support</p>
             </a>
           </div>
         </Drawer>
